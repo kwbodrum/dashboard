@@ -54,7 +54,7 @@ function applySnapshot(snapshot,source){
 }
 async function load(){
   try{
-    const resp=await fetch('./data/rapor.json?t='+Date.now(),{cache:'no-store'});
+    const resp=await fetch('./rapor.json?t='+Date.now(),{cache:'no-store'});
     if(resp.ok){published=core.normalizeSnapshot(await resp.json());activeOrigin='published'}
   }catch(e){/* file:// önizleme için gömülü başlangıç verisi kullanılır. */}
   try{
