@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "type": "KW_BODRUM_PUBLIC_DASHBOARD_SNAPSHOT",
-  "generatedAt": "2026-11-05T00:00:00.000Z",
+  "generatedAt": "2026-11-06T13:12:00.329Z",
   "cutoff": "2026-11-02",
   "historicalWeeks": [
     {
@@ -70,14 +70,6 @@
           2
         ],
         [
-          "Telefon •••• 6221",
-          1
-        ],
-        [
-          "Telefon •••• 5585",
-          1
-        ],
-        [
           "@gunesdnmz",
           1
         ],
@@ -127,6 +119,14 @@
         ],
         [
           "Sevil Genç",
+          1
+        ],
+        [
+          "Telefon •••• 5585",
+          1
+        ],
+        [
+          "Telefon •••• 6221",
           1
         ],
         [
@@ -306,11 +306,11 @@
           6
         ],
         [
-          "20.000.000 TL",
+          "10.000.000 TL",
           4
         ],
         [
-          "10.000.000 TL",
+          "20.000.000 TL",
           4
         ],
         [
@@ -326,11 +326,7 @@
           2
         ],
         [
-          "8.000.000 TL",
-          2
-        ],
-        [
-          "6.500.000 TL",
+          "500.000 USD",
           2
         ],
         [
@@ -338,43 +334,15 @@
           2
         ],
         [
-          "500.000 USD",
+          "6.500.000 TL",
           2
         ],
         [
-          "50.000.000 TL",
-          1
+          "8.000.000 TL",
+          2
         ],
         [
-          "40.000.000 TL",
-          1
-        ],
-        [
-          "30.000.000 TL",
-          1
-        ],
-        [
-          "26.000.000 TL",
-          1
-        ],
-        [
-          "21.000.000 TL",
-          1
-        ],
-        [
-          "18.000.000 TL",
-          1
-        ],
-        [
-          "16.000.000 TL",
-          1
-        ],
-        [
-          "13.500.000 TL",
-          1
-        ],
-        [
-          "12.500.000 TL",
+          "1.300.000 USD",
           1
         ],
         [
@@ -382,11 +350,39 @@
           1
         ],
         [
-          "9.500.000 TL",
+          "12.500.000 TL",
           1
         ],
         [
-          "9.000.000 TL",
+          "13.500.000 TL",
+          1
+        ],
+        [
+          "16.000.000 TL",
+          1
+        ],
+        [
+          "18.000.000 TL",
+          1
+        ],
+        [
+          "2.000.000 USD",
+          1
+        ],
+        [
+          "21.000.000 TL",
+          1
+        ],
+        [
+          "26.000.000 TL",
+          1
+        ],
+        [
+          "30.000.000 TL",
+          1
+        ],
+        [
+          "40.000.000 TL",
           1
         ],
         [
@@ -394,17 +390,602 @@
           1
         ],
         [
-          "1.300.000 USD",
+          "50.000.000 TL",
           1
         ],
         [
-          "2.000.000 USD",
+          "9.000.000 TL",
+          1
+        ],
+        [
+          "9.500.000 TL",
           1
         ]
       ],
       "source": "26–31 Ekim 2026 birleşik tarihsel rapor (dönüşler tahmini)"
     }
   ],
-  "days": [],
-  "coverages": []
+  "days": [
+    {
+      "date": "2026-11-02",
+      "total": 17,
+      "positive": 4,
+      "negative": 12,
+      "pending": 1,
+      "people": [
+        [
+          "Deniz Özen",
+          2
+        ],
+        [
+          "Sami Özveren",
+          2
+        ],
+        [
+          "Sena Dinç",
+          2
+        ],
+        [
+          "Şefika Akagündüz",
+          2
+        ],
+        [
+          "Ali Kemal Birinci",
+          1
+        ],
+        [
+          "Ayşe Şengün",
+          1
+        ],
+        [
+          "Ayşegül Bacak Yeni",
+          1
+        ],
+        [
+          "Esra Tuncer",
+          1
+        ],
+        [
+          "Gönderen okunamadı",
+          1
+        ],
+        [
+          "Kutlay Özcan",
+          1
+        ],
+        [
+          "Mert Gökben GD Adayı | Tuğba Güvenç",
+          1
+        ],
+        [
+          "Oktay Yorulmaz",
+          1
+        ],
+        [
+          "Sema Coşar",
+          1
+        ]
+      ],
+      "regions": [
+        [
+          "Bitez",
+          6
+        ],
+        [
+          "Turgutreis",
+          4
+        ],
+        [
+          "Yahşi",
+          3
+        ],
+        [
+          "Bölge belirtilmemiş",
+          2
+        ],
+        [
+          "Gündoğan",
+          2
+        ],
+        [
+          "Konacık",
+          2
+        ],
+        [
+          "Akyarlar",
+          1
+        ],
+        [
+          "Bodrum Merkez",
+          1
+        ],
+        [
+          "Boğaziçi",
+          1
+        ],
+        [
+          "Gölköy",
+          1
+        ],
+        [
+          "Güvercinlik",
+          1
+        ],
+        [
+          "Kumbahçe",
+          1
+        ],
+        [
+          "Ortakent",
+          1
+        ],
+        [
+          "Tilkicik",
+          1
+        ],
+        [
+          "Türkbükü",
+          1
+        ],
+        [
+          "Yalıkavak",
+          1
+        ]
+      ],
+      "budgets": [
+        [
+          "10.000.000 TL",
+          2
+        ],
+        [
+          "15.000.000 TL",
+          2
+        ],
+        [
+          "35.000.000 TL",
+          2
+        ],
+        [
+          "13.500.000 TL",
+          1
+        ],
+        [
+          "16.000.000 TL",
+          1
+        ],
+        [
+          "2.000.000 USD",
+          1
+        ],
+        [
+          "2.500.000 USD",
+          1
+        ],
+        [
+          "20.000.000 TL",
+          1
+        ],
+        [
+          "25.000.000 TL",
+          1
+        ],
+        [
+          "5.000.000 EUR",
+          1
+        ],
+        [
+          "50.000.000 TL",
+          1
+        ],
+        [
+          "500.000 USD",
+          1
+        ],
+        [
+          "6.000.000 TL",
+          1
+        ],
+        [
+          "8.000.000 TL",
+          1
+        ]
+      ],
+      "estimated": false
+    },
+    {
+      "date": "2026-11-03",
+      "total": 10,
+      "positive": 5,
+      "negative": 4,
+      "pending": 1,
+      "people": [
+        [
+          "Şefika Akagündüz",
+          2
+        ],
+        [
+          "Aslı Atmaca",
+          1
+        ],
+        [
+          "Berrin Tarım Team",
+          1
+        ],
+        [
+          "Buse Aktar",
+          1
+        ],
+        [
+          "Gönderen okunamadı",
+          1
+        ],
+        [
+          "Hasan Ataman",
+          1
+        ],
+        [
+          "Hatice Coşkun",
+          1
+        ],
+        [
+          "Orhan Şenol",
+          1
+        ],
+        [
+          "Yiğit Öztunalı",
+          1
+        ]
+      ],
+      "regions": [
+        [
+          "Bitez",
+          4
+        ],
+        [
+          "Bölge belirtilmemiş",
+          3
+        ],
+        [
+          "Ortakent",
+          3
+        ],
+        [
+          "Kumbahçe",
+          2
+        ],
+        [
+          "Yalıkavak",
+          2
+        ],
+        [
+          "Akyarlar",
+          1
+        ],
+        [
+          "Asarlık",
+          1
+        ],
+        [
+          "Eskiçeşme",
+          1
+        ],
+        [
+          "Gölköy",
+          1
+        ],
+        [
+          "Gümbet",
+          1
+        ],
+        [
+          "Gümüşlük",
+          1
+        ],
+        [
+          "Gündoğan",
+          1
+        ],
+        [
+          "Karaincir",
+          1
+        ],
+        [
+          "Konacık",
+          1
+        ],
+        [
+          "Ortakent Yahşi",
+          1
+        ],
+        [
+          "Türkbükü",
+          1
+        ],
+        [
+          "Umurça",
+          1
+        ],
+        [
+          "Yahşi",
+          1
+        ]
+      ],
+      "budgets": [
+        [
+          "20.000.000 TL",
+          2
+        ],
+        [
+          "35.000.000 TL",
+          2
+        ],
+        [
+          "15.000.000 TL",
+          1
+        ],
+        [
+          "16.000.000 TL",
+          1
+        ],
+        [
+          "17.000.000 TL",
+          1
+        ],
+        [
+          "18.000.000 TL",
+          1
+        ],
+        [
+          "500 USD",
+          1
+        ],
+        [
+          "Üst bütçe belirtilmemiş",
+          1
+        ]
+      ],
+      "estimated": false
+    },
+    {
+      "date": "2026-11-04",
+      "total": 9,
+      "positive": 2,
+      "negative": 6,
+      "pending": 1,
+      "people": [
+        [
+          "@gamzersoy",
+          2
+        ],
+        [
+          "Ayşegül Bacak Yeni",
+          1
+        ],
+        [
+          "Berrin Tarım Team",
+          1
+        ],
+        [
+          "Buse Aktar",
+          1
+        ],
+        [
+          "Deniz Özen",
+          1
+        ],
+        [
+          "Dilara Sünbül",
+          1
+        ],
+        [
+          "Duygu Cantürk",
+          1
+        ],
+        [
+          "Esra Tuncer",
+          1
+        ]
+      ],
+      "regions": [
+        [
+          "Bitez",
+          2
+        ],
+        [
+          "Bölge belirtilmemiş",
+          2
+        ],
+        [
+          "Ortakent",
+          2
+        ],
+        [
+          "Turgutreis",
+          2
+        ],
+        [
+          "Akyarlar",
+          1
+        ],
+        [
+          "Bodrum Merkez",
+          1
+        ],
+        [
+          "Gümbet",
+          1
+        ],
+        [
+          "Gündoğan",
+          1
+        ],
+        [
+          "Konacık",
+          1
+        ],
+        [
+          "Yalıkavak",
+          1
+        ]
+      ],
+      "budgets": [
+        [
+          "8.000.000 TL",
+          3
+        ],
+        [
+          "Üst bütçe belirtilmemiş",
+          2
+        ],
+        [
+          "11.000.000 TL",
+          1
+        ],
+        [
+          "12.000.000 TL",
+          1
+        ],
+        [
+          "25.000.000 TL",
+          1
+        ],
+        [
+          "50.000 TL",
+          1
+        ]
+      ],
+      "estimated": false
+    },
+    {
+      "date": "2026-11-05",
+      "total": 5,
+      "positive": 2,
+      "negative": 2,
+      "pending": 1,
+      "people": [
+        [
+          "Ayşegül Bacak Yeni",
+          1
+        ],
+        [
+          "Gönderen okunamadı",
+          1
+        ],
+        [
+          "Kahraman Gökmen",
+          1
+        ],
+        [
+          "Şahin Dirican",
+          1
+        ],
+        [
+          "Yonca Ayata",
+          1
+        ]
+      ],
+      "regions": [
+        [
+          "Konacık",
+          3
+        ],
+        [
+          "Yalıkavak",
+          2
+        ],
+        [
+          "Adabükü",
+          1
+        ],
+        [
+          "Bitez",
+          1
+        ],
+        [
+          "Bodrum Merkez",
+          1
+        ],
+        [
+          "Gündoğan",
+          1
+        ],
+        [
+          "Türkbükü",
+          1
+        ]
+      ],
+      "budgets": [
+        [
+          "1.500.000 USD",
+          1
+        ],
+        [
+          "13.000.000 TL",
+          1
+        ],
+        [
+          "2.000.000 TL",
+          1
+        ],
+        [
+          "7.500.000 TL",
+          1
+        ],
+        [
+          "8.000.000 TL",
+          1
+        ]
+      ],
+      "estimated": false
+    },
+    {
+      "date": "2026-11-06",
+      "total": 3,
+      "positive": 2,
+      "negative": 0,
+      "pending": 1,
+      "people": [
+        [
+          "Arzu Aygen",
+          1
+        ],
+        [
+          "Kw Bodrum Bölge Müdürlüğü",
+          1
+        ],
+        [
+          "Oya İnkaya",
+          1
+        ]
+      ],
+      "regions": [
+        [
+          "Bölge belirtilmemiş",
+          2
+        ],
+        [
+          "Türkbükü",
+          1
+        ]
+      ],
+      "budgets": [
+        [
+          "Üst bütçe belirtilmemiş",
+          2
+        ],
+        [
+          "3.000.000 USD",
+          1
+        ]
+      ],
+      "estimated": false
+    }
+  ],
+  "coverages": [
+    {
+      "start": "2026-11-02",
+      "end": "2026-11-07",
+      "importedAt": "2026-11-06T13:12:00.298Z"
+    }
+  ]
 }
