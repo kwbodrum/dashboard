@@ -54,7 +54,9 @@ function applySnapshot(snapshot,source){
 }
 async function load(){
   try{
-    const resp=await fetch('./rapor.json?t='+Date.now(),{cache:'no-store'});
+    // GitHub depomuzda rapor.json ana klasörde. Eski data/ klasörlü dağıtımlar da desteklenir.
+    let resp=await fetch('./rapor.json?t='+Date.now(),{cache:'no-store'});
+    if(!resp.ok)resp=await fetch('./data/rapor.json?t='+Date.now(),{cache:'no-store'});
     if(resp.ok){published=core.normalizeSnapshot(await resp.json());activeOrigin='published'}
   }catch(e){/* file:// önizleme için gömülü başlangıç verisi kullanılır. */}
   try{
@@ -74,6 +76,8 @@ function downloadFile(filename,text){
 }
 async function onFile(event){
   const file=event.target.files?.[0];event.target.value='';
+  // Önceki dosyanın düğmeleri yalnızca gerçek yeni seçimde görünür.
+  pending=null;$('importReview').hidden=true;
   if(!file)return;
   if(file.size>25*1024*1024){notify('Dosya 25 MB sınırını aşıyor.','error');return}
   try{
@@ -82,7 +86,7 @@ async function onFile(event){
     if(result.summary.unchanged){notify(`Yeni hafta bulunamadı. Başlangıç dönemine ait ${result.summary.ignoredOld} kayıt atlandı. 26–31 Ekim haftasının 63 arayışı raporda zaten mevcut.`, 'error');return}
     pending=result;
     const s=result.summary;
-    $('importTitle').textContent=`${file.name} · İçe aktarım önizlemesi`;
+    $('importTitle').textContent=`${file.name} · Yükleme kontrolü`;
     $('importSummary').textContent=`${number(s.imported)} yeni dönem kaydı değerlendirildi. Güncellenecek dönemler: ${s.changedWeeks.map(w=>w.label).join(', ')}.`;
     $('importDetail').textContent=`Başlangıç haftasıyla çakıştığı için atlanan: ${s.ignoredOld} · Hatalı tarihli: ${s.ignoredBad} · Dosya içi tekrar: ${s.duplicate}. Seçili haftaların önceki toplamları, bu JSON'daki tam kayıtlarla DEĞİŞTİRİLİR; toplanmaz.`;
     $('importReview').hidden=false;$('alert').hidden=true;
@@ -98,13 +102,13 @@ function confirmImport(){
     $('periodType').value='week';labelPeriodType();
     if(changed.length)$('periodValue').value=changed[changed.length-1].start;
     render();
-    notify('Veriler bu tarayıcıda güncellendi. Diğer cihazlarda da görünmesi için “Yayın JSON’unu indir” düğmesinden rapor.json dosyasını indirip GitHub deposundaki data/rapor.json dosyasının yerine yüklemelisin.');
+    notify('Bu cihazda veriler güncellendi. Herkesin görmesi için “Yayın JSON’unu indir” ile oluşan dosyayı GitHub deposunun ana klasöründeki rapor.json ile değiştir.');
     pending=null;$('importReview').hidden=true;
   }catch(e){notify('Yerel kayıt yapılamadı: '+e.message,'error')}
 }
 function downloadPublish(){
   downloadFile('rapor.json',core.toPublicDownload(current));
-  notify('rapor.json indirildi. GitHub deposundaki data/rapor.json dosyasını bununla değiştirerek siteyi tüm cihazlarda güncelleyebilirsin. Ham arayış metinleri bu dosyada yoktur; gönderen adları ve toplu istatistikler vardır.');
+  notify('rapor.json indirildi. Herkesin görmesi için bu dosyayı GitHub deposunun ana klasöründeki rapor.json ile değiştir.');
 }
 $('periodType').addEventListener('change',()=>{labelPeriodType();render()});
 $('periodValue').addEventListener('change',render);
