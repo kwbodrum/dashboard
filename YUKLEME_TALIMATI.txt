@@ -1,0 +1,16 @@
+KW BODRUM - Sade panel (13 Kasım 2026)
+
+Yapılan değişiklikler:
+- Geçmiş dönüşlerde tahmin var rozetini kaldırdık.
+- Kategori tabloları üzerindeki sağ açıklamayı kaldırdık.
+- Sayfanın altında üç bilgi kutusunu kaldırdık.
+- Sağ alt teknik açıklamayı kaldırdık.
+
+YAYINLAMA
+https://github.com/kwbodrum/dashboard
+Ana klasörde sadece index.html, app.js, style.css dosyalarını yenileriyle değiştirin. Logo dosyanız zaten varsa tekrar yüklemek zorunda değilsiniz.
+Mevcut core.js ve rapor.json dosyalarına dokunmayın.
+GitHub Pages: https://kwbodrum.github.io/dashboard/
+Kaydedince sayfayı Cmd+Shift+R ile yenileyebilirsiniz.
+
+Önemli: Eski döneme ait tahmini veri işaretleri JSON verisinin içinden çıkarılmadı; yalnızca istenmeyen görsel yazılar kaldırıldı. Tarih ve istatistik değerleri olduğu gibi korunmuştur.

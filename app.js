@@ -36,7 +36,8 @@ function render(){
   const s=core.forPeriod(current,mode,chosen);
   $('viewTitle').textContent=mode==='all'?'Tüm dönemler':$('periodValue').selectedOptions[0]?.textContent||'—';
   $('total').textContent=number(s.total);
-  $('estimateBadge').hidden=!s.estimated;
+
+
   for(const [key,num,pct,bar] of [['positive','positive','positivePct','positiveBar'],['negative','negative','negativePct','negativeBar'],['pending','pending','pendingPct','pendingBar']]){
     $(num).textContent=number(s[key]);$(pct).textContent=percent(s[key],s.total);
     $(bar).style.width=s.total?`${Math.min(100,s[key]*100/s.total)}%`:'0%';
