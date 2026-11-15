@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "type": "KW_BODRUM_PUBLIC_DASHBOARD_SNAPSHOT",
-  "generatedAt": "2026-11-06T13:12:00.329Z",
+  "generatedAt": "2026-11-15T08:11:16.870Z",
   "cutoff": "2026-11-02",
   "historicalWeeks": [
     {
@@ -940,13 +940,25 @@
     },
     {
       "date": "2026-11-06",
-      "total": 3,
-      "positive": 2,
-      "negative": 0,
+      "total": 11,
+      "positive": 4,
+      "negative": 6,
       "pending": 1,
       "people": [
         [
+          "@gamzersoy",
+          2
+        ],
+        [
           "Arzu Aygen",
+          1
+        ],
+        [
+          "Candan Erim",
+          1
+        ],
+        [
+          "Dilara Sünbül",
           1
         ],
         [
@@ -954,14 +966,656 @@
           1
         ],
         [
+          "Oktay Yorulmaz",
+          1
+        ],
+        [
           "Oya İnkaya",
+          1
+        ],
+        [
+          "Sena Ortaç",
+          1
+        ],
+        [
+          "Şefika Akagündüz",
+          1
+        ],
+        [
+          "Telefon •••• 3879",
+          1
+        ]
+      ],
+      "regions": [
+        [
+          "Bitez",
+          3
+        ],
+        [
+          "Bölge belirtilmemiş",
+          2
+        ],
+        [
+          "Konacık",
+          2
+        ],
+        [
+          "Kumbahçe",
+          2
+        ],
+        [
+          "Umurça",
+          2
+        ],
+        [
+          "Asarlık",
+          1
+        ],
+        [
+          "Bodrum Merkez",
+          1
+        ],
+        [
+          "Eskiçeşme",
+          1
+        ],
+        [
+          "Gökçebel",
+          1
+        ],
+        [
+          "Gümüşlük",
+          1
+        ],
+        [
+          "Ortakent",
+          1
+        ],
+        [
+          "Turgutreis",
+          1
+        ],
+        [
+          "Türkbükü",
+          1
+        ],
+        [
+          "Yahşi",
+          1
+        ]
+      ],
+      "budgets": [
+        [
+          "20.000.000 TL",
+          2
+        ],
+        [
+          "Üst bütçe belirtilmemiş",
+          2
+        ],
+        [
+          "10.000.000 TL",
+          1
+        ],
+        [
+          "15.000.000 TL",
+          1
+        ],
+        [
+          "3.000.000 USD",
+          1
+        ],
+        [
+          "30.000.000 TL",
+          1
+        ],
+        [
+          "500.000 USD",
+          1
+        ],
+        [
+          "8.000.000 TL",
+          1
+        ],
+        [
+          "9.000.000 TL",
+          1
+        ]
+      ],
+      "estimated": false
+    },
+    {
+      "date": "2026-11-07",
+      "total": 11,
+      "positive": 8,
+      "negative": 2,
+      "pending": 1,
+      "people": [
+        [
+          "Sami Özveren",
+          3
+        ],
+        [
+          "Özlem Kabak",
+          2
+        ],
+        [
+          "Dilara Sünbül",
+          1
+        ],
+        [
+          "Gönderen okunamadı",
+          1
+        ],
+        [
+          "Hatice Coşkun",
+          1
+        ],
+        [
+          "Nejat Güreş",
+          1
+        ],
+        [
+          "Sena Dinç",
+          1
+        ],
+        [
+          "Sena Ortaç",
           1
         ]
       ],
       "regions": [
         [
           "Bölge belirtilmemiş",
+          3
+        ],
+        [
+          "Konacık",
+          3
+        ],
+        [
+          "Bitez",
           2
+        ],
+        [
+          "Kumbahçe",
+          2
+        ],
+        [
+          "Ortakent",
+          2
+        ],
+        [
+          "Turgutreis",
+          2
+        ],
+        [
+          "Yalıkavak",
+          2
+        ],
+        [
+          "Adabükü",
+          1
+        ],
+        [
+          "Akyarlar",
+          1
+        ],
+        [
+          "Eskiçeşme",
+          1
+        ],
+        [
+          "Gümbet",
+          1
+        ],
+        [
+          "Gümüşlük",
+          1
+        ],
+        [
+          "Torba",
+          1
+        ],
+        [
+          "Türkbükü",
+          1
+        ],
+        [
+          "Umurça",
+          1
+        ],
+        [
+          "Yahşi",
+          1
+        ]
+      ],
+      "budgets": [
+        [
+          "9.000.000 TL",
+          2
+        ],
+        [
+          "Üst bütçe belirtilmemiş",
+          2
+        ],
+        [
+          "11.000.000 TL",
+          1
+        ],
+        [
+          "13.500.000 TL",
+          1
+        ],
+        [
+          "15.000.000 TL",
+          1
+        ],
+        [
+          "20.000.000 TL",
+          1
+        ],
+        [
+          "30.000.000 TL",
+          1
+        ],
+        [
+          "6.500.000 TL",
+          1
+        ],
+        [
+          "8.000.000 TL",
+          1
+        ]
+      ],
+      "estimated": false
+    },
+    {
+      "date": "2026-11-09",
+      "total": 7,
+      "positive": 0,
+      "negative": 7,
+      "pending": 0,
+      "people": [
+        [
+          "Buse Aktar",
+          2
+        ],
+        [
+          "@gamzersoy",
+          1
+        ],
+        [
+          "Ali Emre Karaöz",
+          1
+        ],
+        [
+          "Dilara Sünbül",
+          1
+        ],
+        [
+          "Emre Demirci",
+          1
+        ],
+        [
+          "Yeliz Genç",
+          1
+        ]
+      ],
+      "regions": [
+        [
+          "Bitez",
+          3
+        ],
+        [
+          "Gümbet",
+          2
+        ],
+        [
+          "Ortakent",
+          2
+        ],
+        [
+          "Bodrum Merkez",
+          1
+        ],
+        [
+          "Konacık",
+          1
+        ],
+        [
+          "Turgutreis",
+          1
+        ],
+        [
+          "Yahşi",
+          1
+        ],
+        [
+          "Yalıkavak",
+          1
+        ]
+      ],
+      "budgets": [
+        [
+          "14.000.000 TL",
+          1
+        ],
+        [
+          "35.000.000 TL",
+          1
+        ],
+        [
+          "40.000.000 TL",
+          1
+        ],
+        [
+          "7.000.000 TL",
+          1
+        ],
+        [
+          "7.500.000 TL",
+          1
+        ],
+        [
+          "9.000.000 TL",
+          1
+        ],
+        [
+          "Üst bütçe belirtilmemiş",
+          1
+        ]
+      ],
+      "estimated": false
+    },
+    {
+      "date": "2026-11-10",
+      "total": 6,
+      "positive": 4,
+      "negative": 1,
+      "pending": 1,
+      "people": [
+        [
+          "Emre Demirci",
+          2
+        ],
+        [
+          "Erhan Ünaldı",
+          1
+        ],
+        [
+          "Fulya Şener",
+          1
+        ],
+        [
+          "Gönderen okunamadı",
+          1
+        ],
+        [
+          "Hatice Coşkun",
+          1
+        ]
+      ],
+      "regions": [
+        [
+          "Ortakent",
+          5
+        ],
+        [
+          "Bitez",
+          3
+        ],
+        [
+          "Konacık",
+          3
+        ],
+        [
+          "Gümüşlük",
+          2
+        ],
+        [
+          "Gündoğan",
+          2
+        ],
+        [
+          "Yalıkavak",
+          2
+        ],
+        [
+          "Bölge belirtilmemiş",
+          1
+        ],
+        [
+          "Gölköy",
+          1
+        ],
+        [
+          "Koyunbaba",
+          1
+        ],
+        [
+          "Yeniköy",
+          1
+        ]
+      ],
+      "budgets": [
+        [
+          "12.000.000 TL",
+          2
+        ],
+        [
+          "15 TL",
+          1
+        ],
+        [
+          "21.000.000 TL",
+          1
+        ],
+        [
+          "25.000.000 TL",
+          1
+        ],
+        [
+          "35.000.000 TL",
+          1
+        ]
+      ],
+      "estimated": false
+    },
+    {
+      "date": "2026-11-11",
+      "total": 5,
+      "positive": 3,
+      "negative": 2,
+      "pending": 0,
+      "people": [
+        [
+          "Emre Demirci",
+          1
+        ],
+        [
+          "Fulya Şener",
+          1
+        ],
+        [
+          "Hatice Coşkun",
+          1
+        ],
+        [
+          "Kutlay Özcan",
+          1
+        ],
+        [
+          "Yonca Ayata",
+          1
+        ]
+      ],
+      "regions": [
+        [
+          "Bitez",
+          4
+        ],
+        [
+          "Ortakent",
+          3
+        ],
+        [
+          "Gümüşlük",
+          2
+        ],
+        [
+          "Gündoğan",
+          2
+        ],
+        [
+          "Konacık",
+          2
+        ],
+        [
+          "Yalıkavak",
+          2
+        ],
+        [
+          "Gölköy",
+          1
+        ],
+        [
+          "Kadıkalesi",
+          1
+        ],
+        [
+          "Koyunbaba",
+          1
+        ],
+        [
+          "Yahşi",
+          1
+        ]
+      ],
+      "budgets": [
+        [
+          "1.300.000 USD",
+          1
+        ],
+        [
+          "11.000.000 TL",
+          1
+        ],
+        [
+          "21.000.000 TL",
+          1
+        ],
+        [
+          "35.000.000 TL",
+          1
+        ],
+        [
+          "8.500.000 TL",
+          1
+        ]
+      ],
+      "estimated": false
+    },
+    {
+      "date": "2026-11-12",
+      "total": 12,
+      "positive": 7,
+      "negative": 3,
+      "pending": 2,
+      "people": [
+        [
+          "Ali Emre Karaöz",
+          2
+        ],
+        [
+          "Deniz Özen",
+          2
+        ],
+        [
+          "Gönderen okunamadı",
+          2
+        ],
+        [
+          "Kutlay Özcan",
+          2
+        ],
+        [
+          "@gamzersoy",
+          1
+        ],
+        [
+          "Dilara Sünbül",
+          1
+        ],
+        [
+          "Oktay Yorulmaz",
+          1
+        ],
+        [
+          "Şefika Akagündüz",
+          1
+        ]
+      ],
+      "regions": [
+        [
+          "Bitez",
+          8
+        ],
+        [
+          "Konacık",
+          6
+        ],
+        [
+          "Ortakent",
+          3
+        ],
+        [
+          "Torba",
+          3
+        ],
+        [
+          "Gümüşlük",
+          2
+        ],
+        [
+          "Turgutreis",
+          2
+        ],
+        [
+          "Yahşi",
+          2
+        ],
+        [
+          "Yalıkavak",
+          2
+        ],
+        [
+          "Bağla",
+          1
+        ],
+        [
+          "Bodrum Merkez",
+          1
+        ],
+        [
+          "Bölge belirtilmemiş",
+          1
+        ],
+        [
+          "Gölköy",
+          1
+        ],
+        [
+          "Gümbet",
+          1
+        ],
+        [
+          "Gündoğan",
+          1
+        ],
+        [
+          "Koyunbaba",
+          1
         ],
         [
           "Türkbükü",
@@ -971,10 +1625,132 @@
       "budgets": [
         [
           "Üst bütçe belirtilmemiş",
+          4
+        ],
+        [
+          "10.000.000 TL",
+          1
+        ],
+        [
+          "11.000.000 TL",
+          1
+        ],
+        [
+          "15.000.000 TL",
+          1
+        ],
+        [
+          "17.000.000 TL",
+          1
+        ],
+        [
+          "20.000.000 TL",
+          1
+        ],
+        [
+          "30.000.000 TL",
+          1
+        ],
+        [
+          "35.000.000 TL",
+          1
+        ],
+        [
+          "7.500.000 TL",
+          1
+        ]
+      ],
+      "estimated": false
+    },
+    {
+      "date": "2026-11-13",
+      "total": 6,
+      "positive": 1,
+      "negative": 4,
+      "pending": 1,
+      "people": [
+        [
+          "Aslı Atmaca",
+          1
+        ],
+        [
+          "Deniz Özen",
+          1
+        ],
+        [
+          "Dilara Sünbül",
+          1
+        ],
+        [
+          "Gönderen okunamadı",
+          1
+        ],
+        [
+          "Sema Coşar",
+          1
+        ],
+        [
+          "Zehra Özer",
+          1
+        ]
+      ],
+      "regions": [
+        [
+          "Bitez",
+          4
+        ],
+        [
+          "Konacık",
+          3
+        ],
+        [
+          "Ortakent",
           2
         ],
         [
-          "3.000.000 USD",
+          "Turgutreis",
+          2
+        ],
+        [
+          "Bağla",
+          1
+        ],
+        [
+          "Bodrum Merkez",
+          1
+        ],
+        [
+          "Gümüşlük",
+          1
+        ],
+        [
+          "Gündoğan",
+          1
+        ],
+        [
+          "Kumbahçe",
+          1
+        ],
+        [
+          "Ortakent Yahşi",
+          1
+        ]
+      ],
+      "budgets": [
+        [
+          "11.000.000 TL",
+          2
+        ],
+        [
+          "40.000.000 TL",
+          2
+        ],
+        [
+          "20.000.000 TL",
+          1
+        ],
+        [
+          "9.000.000 TL",
           1
         ]
       ],
@@ -985,7 +1761,12 @@
     {
       "start": "2026-11-02",
       "end": "2026-11-07",
-      "importedAt": "2026-11-06T13:12:00.298Z"
+      "importedAt": "2026-11-15T08:11:16.863Z"
+    },
+    {
+      "start": "2026-11-09",
+      "end": "2026-11-14",
+      "importedAt": "2026-11-15T08:11:16.863Z"
     }
   ]
 }
