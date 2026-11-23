@@ -3,6 +3,8 @@
 const $=id=>document.getElementById(id);
 const core=window.KWCore;
 const STORE='KW_BODRUM_MANUEL_JSON_PANEL_V2';
+const API_BASE=String(window.KW_BODRUM_LIVE_API||'').trim().replace(/\/$/,'');
+const LIVE_ENABLED=/^https:\/\/[a-z0-9-]+\.[a-z0-9-]+\.workers\.dev$/i.test(API_BASE);
 const number=n=>new Intl.NumberFormat('tr-TR').format(n);
 const percent=(n,total)=>total?`%${new Intl.NumberFormat('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n*100/total)}`:'%0,00';
 let published=core.normalizeSnapshot(JSON.parse($('fallbackData').textContent));
@@ -17,7 +19,9 @@ function labelPeriodType(){
   $('periodValue').disabled=mode==='all';
   const prev=$('periodValue').value;
   $('periodValue').replaceChildren();
-  const options=core.periodList(current,mode);
+  const options=mode==='day'
+    ? [...current.days].sort((a,b)=>b.date.localeCompare(a.date)).map(d=>({value:d.date,label:core.trDate(d.date)}))
+    : core.periodList(current,mode);
   for(const o of options)$('periodValue').add(new Option(o.label,o.value));
   if(options.some(o=>o.value===prev))$('periodValue').value=prev;
 }
@@ -33,7 +37,9 @@ function populate(table,rows,total){
 function render(){
   const mode=$('periodType').value;
   const chosen=$('periodValue').value;
-  const s=core.forPeriod(current,mode,chosen);
+  const s=mode==='day'
+    ? core.aggregateStats(current.days.filter(d=>d.date===chosen))
+    : core.forPeriod(current,mode,chosen);
   $('viewTitle').textContent=mode==='all'?'Tüm dönemler':$('periodValue').selectedOptions[0]?.textContent||'—';
   $('total').textContent=number(s.total);
 
@@ -45,13 +51,29 @@ function render(){
   for(const [name,table,badge,suffix] of [['people','peopleRows','peopleCount','kişi'],['regions','regionsRows','regionsCount','bölge'],['budgets','budgetsRows','budgetsCount','bütçe']]){
     populate(table,s[name],s.total);$(badge).textContent=`${s[name].length} ${suffix}`;
   }
-  $('sourceLabel').textContent=activeOrigin==='local'?'Yerel önizleme':activeOrigin==='published'?'GitHub yayın verisi':'Başlangıç raporu';
+  $('sourceLabel').textContent=activeOrigin==='live'?'Canlı istatistikler':activeOrigin==='live-stale'?'Son alınan canlı veri':activeOrigin==='local'?'Yerel önizleme':activeOrigin==='published'?'GitHub yayın verisi':'Başlangıç raporu';
   const dt=current.generatedAt?new Date(current.generatedAt):null;
   $('updatedAt').textContent=dt&&!Number.isNaN(dt.valueOf())?`Son rapor: ${dt.toLocaleString('tr-TR',{timeZone:'Europe/Istanbul'})}`:'İlk hafta yüklü';
 }
 function applySnapshot(snapshot,source){
   current=core.normalizeSnapshot(snapshot);activeOrigin=source;
   labelPeriodType();render();
+}
+async function pollLive(){
+  if(!LIVE_ENABLED)return;
+  try{
+    const response=await fetch(API_BASE+'/snapshot?ts='+Date.now(),{cache:'no-store'});
+    if(!response.ok)throw Error('API HTTP '+response.status);
+    const snapshot=core.normalizeSnapshot(await response.json());
+    // Tarihsel 63 arayış yalnızca GitHub'daki sabit başlangıç raporunda da korunur.
+    if(snapshot.historicalWeeks.reduce((sum,w)=>sum+w.total,0)!==63)throw Error('Tarihsel başlangıç verisi eksik');
+    applySnapshot(snapshot,'live');
+    $('alert').hidden=true;
+  }catch(err){
+    console.warn('Canlı rapor okunamadı; son geçerli veriler korunuyor:',err);
+    if(activeOrigin==='live')activeOrigin='live-stale';
+    render();
+  }
 }
 async function load(){
   try{
@@ -60,6 +82,16 @@ async function load(){
     if(!resp.ok)resp=await fetch('./data/rapor.json?t='+Date.now(),{cache:'no-store'});
     if(resp.ok){published=core.normalizeSnapshot(await resp.json());activeOrigin='published'}
   }catch(e){/* file:// önizleme için gömülü başlangıç verisi kullanılır. */}
+  if(LIVE_ENABLED){
+    // Canlı sürümde eski tarayıcı önizlemesi sunucu sonuçlarını kesinlikle gölgelermez.
+    applySnapshot(published,activeOrigin);
+    const tools=document.querySelector('.tools');
+    if(tools)tools.style.display='none'; // Otomatik bağlantı çalışırken manuel JSON arayüzü gizli.
+    await pollLive();
+    setInterval(pollLive,60*1000);
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)void pollLive()});
+    return;
+  }
   try{
     const raw=localStorage.getItem(STORE);
     if(raw){const local=core.normalizeSnapshot(JSON.parse(raw));
