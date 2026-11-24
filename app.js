@@ -25,14 +25,67 @@ function labelPeriodType(){
   for(const o of options)$('periodValue').add(new Option(o.label,o.value));
   if(options.some(o=>o.value===prev))$('periodValue').value=prev;
 }
-function populate(table,rows,total){
-  const dest=$(table);dest.replaceChildren();
-  if(!rows.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=3;td.className='empty-row';td.textContent='Bu dönemde kayıt yok';tr.append(td);dest.append(tr);return}
-  for(const [name,count] of rows){
-    const tr=document.createElement('tr');
-    for(const v of [name,number(count),`(${percent(count,total)})`]){const td=document.createElement('td');td.textContent=v;tr.append(td)}
-    dest.append(tr);
+// Görsel katman: yalnızca core.aggregateStats/forPeriod'dan gelen hazır toplamları kullanır.
+// Canlı API okuma, dönem seçimi ve veri kaydetme mantığı değiştirilmez.
+const DONUT_COLORS=['#237bea','#f04454','#ff9334','#ffc62c','#46b954','#10bcb1','#24a9d8','#754de3','#ae50d1','#ed54ab'];
+const OTHERS_COLOR='#b4b7be';
+const SVG_NS='http://www.w3.org/2000/svg';
+const percentOf=(n,total)=>total?new Intl.NumberFormat('tr-TR',{minimumFractionDigits:1,maximumFractionDigits:1}).format(100*n/total)+'%':'0,0%';
+function svgNode(tag,attrs){
+  const el=document.createElementNS(SVG_NS,tag);
+  for(const [key,value] of Object.entries(attrs))el.setAttribute(key,String(value));
+  return el;
+}
+function renderDonut(chartId,legendId,rows,label){
+  const chart=$(chartId),legend=$(legendId);chart.replaceChildren();legend.replaceChildren();
+  const top=rows.slice(0,10);
+  const other=rows.slice(10).reduce((sum,r)=>sum+r[1],0);
+  const groups=top.map(([name,count],i)=>({name,count,color:DONUT_COLORS[i]}));
+  if(other>0)groups.push({name:'Diğer',count:other,color:OTHERS_COLOR});
+  const total=groups.reduce((sum,r)=>sum+r.count,0);
+  const svg=svgNode('svg',{viewBox:'0 0 200 200',role:'img','aria-label':`${label}: ilk 10 ve diğerlerinin dağılımı`});
+  const radius=74,circumference=2*Math.PI*radius;
+  svg.append(svgNode('circle',{cx:100,cy:100,r:radius,fill:'none',stroke:'#ebedf0','stroke-width':31}));
+  let offset=0;
+  for(const group of groups){
+    const len=total?group.count/total*circumference:0;
+    const gap=Math.min(2.4,len*.12);
+    const circle=svgNode('circle',{cx:100,cy:100,r:radius,fill:'none',stroke:group.color,'stroke-width':31,
+      'stroke-dasharray':`${Math.max(.001,len-gap)} ${circumference}`,
+      'stroke-dashoffset':`${-offset}`,transform:'rotate(-90 100 100)'});
+    const title=svgNode('title',{});
+    title.textContent=`${group.name}: ${number(group.count)} (${percentOf(group.count,total)} pasta payı)`;
+    circle.append(title);svg.append(circle);offset+=len;
   }
+  const count=svgNode('text',{x:100,y:101,'text-anchor':'middle',class:'donut-center-number'});
+  count.textContent=number(rows.length);svg.append(count);
+  const unit=svgNode('text',{x:100,y:122,'text-anchor':'middle',class:'donut-center-unit'});
+  unit.textContent=label;svg.append(unit);
+  chart.append(svg);
+  if(!groups.length){const empty=document.createElement('p');empty.className='legend-empty';empty.textContent='Bu dönemde kayıt yok';legend.append(empty);return}
+  for(const group of groups){
+    const line=document.createElement('div');line.className='legend-line';
+    const dot=document.createElement('span');dot.className='legend-dot';dot.style.background=group.color;
+    const name=document.createElement('span');name.className='legend-name';name.textContent=group.name;name.title=group.name;
+    const count=document.createElement('strong');count.className='legend-count';count.textContent=number(group.count);
+    const ratio=document.createElement('span');ratio.className='legend-ratio';ratio.textContent=percentOf(group.count,total);
+    line.append(dot,name,count,ratio);legend.append(line);
+  }
+}
+function populateRemaining(table,rows,total){
+  const dest=$(table);dest.replaceChildren();
+  if(rows.length<=10){
+    const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=4;td.className='empty-row';
+    td.textContent=rows.length?'Bu dönemde ilk 10 dışındaki kayıt yok':'Bu dönemde kayıt yok';
+    tr.append(td);dest.append(tr);return;
+  }
+  rows.slice(10).forEach(([name,count],i)=>{
+    const tr=document.createElement('tr');
+    for(const v of [String(i+11),name,number(count),`(${percent(count,total)})`]){
+      const td=document.createElement('td');td.textContent=v;tr.append(td);
+    }
+    dest.append(tr);
+  });
 }
 function render(){
   const mode=$('periodType').value;
@@ -49,7 +102,9 @@ function render(){
     $(bar).style.width=s.total?`${Math.min(100,s[key]*100/s.total)}%`:'0%';
   }
   for(const [name,table,badge,suffix] of [['people','peopleRows','peopleCount','kişi'],['regions','regionsRows','regionsCount','bölge'],['budgets','budgetsRows','budgetsCount','bütçe']]){
-    populate(table,s[name],s.total);$(badge).textContent=`${s[name].length} ${suffix}`;
+    renderDonut(name+'Chart',name+'Legend',s[name],suffix.toLocaleUpperCase('tr-TR'));
+    populateRemaining(table,s[name],s.total);
+    $(badge).textContent=`${s[name].length} ${suffix}`;
   }
   $('sourceLabel').textContent=activeOrigin==='live'?'Canlı istatistikler':activeOrigin==='live-stale'?'Son alınan canlı veri':activeOrigin==='local'?'Yerel önizleme':activeOrigin==='published'?'GitHub yayın verisi':'Başlangıç raporu';
   const dt=current.generatedAt?new Date(current.generatedAt):null;
